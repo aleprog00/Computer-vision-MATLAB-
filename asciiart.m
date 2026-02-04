@@ -35,7 +35,7 @@ gray = imadjust(gray); %%%Aggiusta l'immagine per renderla più facile da distin
 %prendo l'immagine a blocchi di pixel 8x8
 [righe, colonne] = size(gray);
 
-fprintf("\nrighe:"+righe+"\ncolonne:"+colonne);
+%fprintf("\nrighe:"+righe+"\ncolonne:"+colonne);
 
 %Creo immagine vuota tutta bianca
 vuota=uint8(255*ones(righe, colonne));
@@ -54,31 +54,7 @@ for bloccoy = 1 : 8 : righe - 7
         end
             
         media=temp/64;
-        fprintf(media+" ");
-
-        %switch(true)
-          %  case (media>=0 && media <=valoremedio)
-         %       vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{10};
-            %case (media>=(valoremedio+1) && media <= (valoremedio*2))   
-           %     vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{2};
-           % case (media>=(2*valoremedio+1) && media <= (valoremedio*3))   
-         %       vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{3};
-        %    case (media>=(3*valoremedio+1) && media <= (valoremedio*4))   
-        %        vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{4};
-      %      case (media>=(4*valoremedio+1) && media <= (valoremedio*5))   
-      %          vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{5};
-      %      case (media>=(5*valoremedio+1) && media <= (valoremedio*6))       
-      %          vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{6};
-      %      case (media>=(6*valoremedio+1) && media <= (valoremedio*7))   
-      %          vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{7};
-      %      case (media>=(7*valoremedio+1) && media <= (valoremedio*8))   
-      %          vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{8};
-      %      case (media>=(8*valoremedio+1) && media <= (valoremedio*9))   
-      %          vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{9};
-      %      otherwise
-      %          vuota(bloccoy:bloccoy+7, bloccox:bloccox+7) = caratteri{1};
-      %  end
-      %  
+        %fprintf(media+" ");
         
         switch(true)
             case (media <= valoremedio) % 0 - 25.5
@@ -107,7 +83,7 @@ for bloccoy = 1 : 8 : righe - 7
 
     
     end
-    fprintf("\n")
+    %fprintf("\n")
 end
 
 
